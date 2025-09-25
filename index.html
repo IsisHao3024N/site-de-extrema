@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Extrema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Figtree:wght@700&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #3084F2;
+    }
+
+    /* ===== HERO SECTION ===== */
+    header {
+      background: url('imagens/pedra-cume.jpg') center/cover no-repeat;
+       background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100vh; 
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 0 20px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      margin: 50px 0;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    /* ===== CAROUSEL ===== */
+    .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .controls button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .controls button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      color: #3084F2;
+      margin-right: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    form textarea,
+    form button {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    form button {
+      background: #3084F2;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #3084F2;
+    }
+
+    @media (max-width: 768px) {
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+
+    .social-icons {
+      margin: 15px 0;
+    }
+
+    .social-icons a {
+      color: #3084F2;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+
+.inst {
+  background: linear-gradient(to top,#F2E638, #FF2201, #9000C2, #F22ED2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease; /* animação suave */
+}
+
+.inst:hover {
+   background: none !important;
+   color: #fff !important;
+   -webkit-text-fill-color: #fff !important; 
+}
+
+     .social-icons a:hover {
+      color: #fff;
+      transform: scale(1.2);
+    }
+
+    footer iframe {
+      margin-top: 15px;
+      border-radius: 10px;
+      width: 100%;
+      height: 250px;
+    }
+    @media screen and (min-width: 780px) and (max-width: 992px) {
+    body{
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    main{
+        width: 80vw;
+        height: 500px;
+    }   
+
+}
+
+@media screen and (min-width: 992px) {
+    body{
+    background-image: linear-gradient(to left, #696FDB, #4B4C5C);
+
+    }
+
+    main{
+        width: 950px;
+    }
+
+
+}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="#atracoes">Atrações</a>
+    <a href="#gastronomia">Gastronomia</a>
+    <a href="#rotas">Rotas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <h1>Explore Extrema</h1>
+    <p>Descubra as belezas naturais e atrações culturais de Extrema, MG.</p>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <section id="atracoes">
+      <h2>Atrações Principais</h2>
+      <div class="carousel" id="carousel-atracoes">
+        <img class="cume" src="imagens/pedra-cume.jpg" alt="Atração 1" class="active">
+        <img src="imagens/pico-guara.jpg" alt="Atração 2">
+        <img src="imagens/rota-das-pedras.jpg" alt="Atração 3">
+        <div class="controls">
+          <button onclick="prevSlide('carousel-atracoes')">&#10094;</button>
+          <button onclick="nextSlide('carousel-atracoes')">&#10095;</button>
+        </div>
+      </div>
+      <p>Conheça os pontos turísticos mais visitados da região, como a Pedra do Cume e o Parque Municipal Cachoeira do
+        Salto.</p>
+    </section>
+
+    <section id="gastronomia">
+      <h2>Gastronomia</h2>
+      <div class="carousel" id="carousel-gastronomia">
+        <img src="imagens/armazem_bertolotti.jpg" alt="Gastronomia" class="active">
+        <img src="imagens/vila_lobos.jpg" alt="Gastronomia">
+        <img src="imagens/villa_ramos.jpg" alt="Gastronomia">
+        <img src="imagens/pamonharia_joaquina.jpg" alt="Gastronomia">
+        <img src="imagens/empyereo_destilatario.jpg" alt="Gastronomia">
+        <div class="controls">
+          <button onclick="prevSlide('carousel-gastronomia')">&#10094;</button>
+          <button onclick="nextSlide('carousel-gastronomia')">&#10095;</button>
+        </div>
+      </div>
+      <p>Delicie-se com a culinária local, incluindo os famosos queijos mineiros e pratos típicos.</p>
+    </section>
+
+    <section id="rotas">
+      <h2>Rotas</h2>
+      <div class="carousel" id="carousel-rotas">
+        <img src="imagens/rota-das-rosas.jpg" alt="Rota das Rosas" class="active">
+        <img src="imagens/rota-do-sol.webp" alt="Rota do Sol">
+        <img src="imagens/rota-dos-ventos.jpg" alt="Rota dos Ventos">
+        <img src="imagens/rotas-das-aguas.jpg" alt="Rota das Águas">
+        <div class="controls">
+          <button onclick="prevSlide('carousel-rotas')">&#10094;</button>
+          <button onclick="nextSlide('carousel-rotas')">&#10095;</button>
+        </div>
+      </div>
+      <p>Explore as rotas temáticas que Extrema oferece e conheça: Rota das Rosas, Rota do Sol, Rota dos Ventos e Rota
+        das Águas.</p>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <div class="contact">
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Extrema - Minas Gerais</p>
+          <p><i class="fas fa-phone-alt"></i> +55 (35) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@exploreextrema.com</p>
+        </div>
+        <form>
+          <input type="text" placeholder="Seu Nome" required>
+          <input type="email" placeholder="Seu Email" required>
+          <textarea placeholder="Sua Mensagem" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Explore Extrema. Todos os direitos reservados.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a  class="inst" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29413.91138269717!2d-46.3647044256836!3d-22.8491467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceadb45f10e2ab%3A0x186be6e2a34f1852!2sParque%20de%20Eventos%20de%20Extrema-MG!5e0!3m2!1spt-BR!2sbr!4v1732848352502!5m2!1spt-BR!2sbr"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </footer>
+
+  <script>
+    function showSlide(carouselId, index) {
+      const slides = document.querySelectorAll(`#${carouselId} img`);
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function prevSlide(carouselId) {
+      const slides = document.querySelectorAll(`#${carouselId} img`);
+      let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+      showSlide(carouselId, currentSlide);
+    }
+
+    function nextSlide(carouselId) {
+      const slides = document.querySelectorAll(`#${carouselId} img`);
+      let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+      showSlide(carouselId, currentSlide);
+    }
+
+    setInterval(() => nextSlide('carousel-atracoes'), 3000);
+    setInterval(() => nextSlide('carousel-gastronomia'), 3000);
+    setInterval(() => nextSlide('carousel-rotas'), 3000);
+  </script>
+</body>
+
+</html>
