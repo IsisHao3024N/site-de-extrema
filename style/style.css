@@ -39,7 +39,7 @@
 
     /* ===== HERO SECTION ===== */
     header {
-      background: url('../imagens/pedra-cume.jpg') center/cover no-repeat;
+      background: url('/imagens/pedra-cume.jpg') center/cover no-repeat;
        background-position: center;
       background-size: cover;
       background-attachment: fixed;
