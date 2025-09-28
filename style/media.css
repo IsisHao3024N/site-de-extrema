@@ -1,5 +1,5 @@
    
-    @media (max-width: 568px) {
+    @media (max-width: 368px) {
       .contato{
         display: flex;
         flex-flow: row-reverse;
