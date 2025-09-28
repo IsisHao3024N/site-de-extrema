@@ -1,5 +1,9 @@
    
-    @media (max-width: 368px) {
+    @media (min-width: 280px) and (max-width: 780px) {
+      main{
+        width: 100%;
+        height: 100px;
+    }   
       .contato{
         display: flex;
         flex-flow: row-reverse;
@@ -65,15 +69,71 @@
    @media screen and (min-width: 780px) and (max-width: 992px) {
     body{
       font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
+      line-height: 1.2;
       background-color: #fafafa;
       color: #333;
     }
 
-    main{
-        width: 80vw;
-        height: 500px;
-    }   
+       .contato{
+        display: flex;
+        flex-flow: row-reverse;
+      }
+      .contact {
+        grid-template-columns: 1fr;
+      }    
+      .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .contact-info {
+      font-size: 10px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info i {
+      color: #3084F2;
+      margin-right: 10px;
+    }
+      
+      form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    form textarea,
+    form button {
+      margin-bottom: 5px;
+      padding: 8px;
+      font-size: 10PX;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form textarea {
+      resize: none;
+      height: 20px;
+    }
+
+    form button {
+      background: #3084F2;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #3084F2;
+    }
+     
 
 }
 
