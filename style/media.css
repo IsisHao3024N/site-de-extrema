@@ -15,11 +15,11 @@
     }
 
     .contact-info {
-      font-size: 11px;
+      font-size: 10px;
     }
 
     .contact-info p {
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     .contact-info i {
@@ -35,16 +35,16 @@
     form input,
     form textarea,
     form button {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       padding: 8px;
-      font-size: 1rem;
+      font-size: 10PX;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
 
     form textarea {
       resize: none;
-      height: 50px;
+      height: 20px;
     }
 
     form button {
