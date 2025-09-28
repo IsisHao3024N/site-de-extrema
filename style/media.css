@@ -2,7 +2,38 @@
     @media (max-width: 768px) {
       .contact {
         grid-template-columns: 1fr;
-      }
+      }    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    form textarea,
+    form button {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    form button {
+      background: #3084F2;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #3084F2;
+    }
     }
    
    
