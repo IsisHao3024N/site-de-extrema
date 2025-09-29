@@ -1,0 +1,35 @@
+   
+    @media (max-width: 768px) {
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+   
+   
+   @media screen and (min-width: 780px) and (max-width: 992px) {
+    body{
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    main{
+        width: 80vw;
+        height: 500px;
+    }   
+
+}
+
+@media screen and (min-width: 992px) {
+    body{
+    background-image: linear-gradient(to left, #696FDB, #4B4C5C);
+
+    }
+
+    main{
+        width: 950px;
+    }
+
+
+}
