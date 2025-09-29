@@ -1,12 +1,14 @@
+@media (max-width: 600px) {
+  .carousel img {
+    height: auto;
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
    
-    @media (max-width: 768px) {
-      .contact {
-        grid-template-columns: 1fr;
-      }
-    }
    
-   
-   @media screen and (min-width: 780px) and (max-width: 992px) {
+   @media screen and (min-width: 600px) and (max-width: 992px) {
     body{
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
