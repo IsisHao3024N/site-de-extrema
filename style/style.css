@@ -39,17 +39,19 @@
 
     /* ===== HERO SECTION ===== */
     header {
-      background: url('imagens/pedra-cume.jpg') center/cover no-repeat;
-       background-position: center;
+      background: url('https://isishao3024n.github.io/site-de-extrema/imagens/pedra-cume.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
+      background-attachment: fixed;
       height: 100vh; 
-      height: 90vh;
-      display: flex;
+      height: 90vh;   display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
+   
     }
 
     header::before {
@@ -199,11 +201,6 @@
       background: #3084F2;
     }
 
-    @media (max-width: 768px) {
-      .contact {
-        grid-template-columns: 1fr;
-      }
-    }
 
     /* ===== FOOTER ===== */
     footer {
