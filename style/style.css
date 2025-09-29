@@ -42,7 +42,6 @@
       background: url('imagens/pedra-cume.jpg') center/cover no-repeat;
        background-position: center;
       background-size: cover;
-      background-attachment: fixed;
       height: 100vh; 
       height: 90vh;
       display: flex;
